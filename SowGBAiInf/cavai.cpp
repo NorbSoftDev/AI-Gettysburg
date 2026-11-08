@@ -437,7 +437,7 @@ static bool StandNoTargetAI(CXUnit base, CXUnit closest, CXUnit soldmel, SEnemy*
 			if ( dist2 <= DISTCAV1AUTOMELEE )
 				base.TargAdd( base.EnemyClose(), dist2 );
 
-			bRes = ChargeAI(base.EnemyClose(), dist2 );
+			bRes = ChargeAI( base, dist2 ); // was ChargeAI(base.EnemyClose(), ...), which ordered the enemy unit to charge
 
 			if ( bRes ) // we did nothing, let's not just stand here
 			{

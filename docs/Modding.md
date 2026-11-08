@@ -420,7 +420,7 @@ In `cavai.cpp` and `offcmds.cpp` (`GetCavCommand`).
 - **Charging:** cavalry trots, gallops and charges based on the stance's `CavChargDist`, `CavRunDist`, `CavCharge` and `CavPowerFactor`.
 - **Squares:** cavalry never charges a formed square that is standing still. It only charges a square that is marching or running, that is within `DISTCAV1AUTOMELEE`/2 + `CavPowerFactor` yards, and only if its men × morale beat the square's men × morale × `SquareChargeFactor`.
 - **Close enemies:**
-  - **Waterloo:** enemies within `DISTCAV1AUTOMELEE` (100 yards) are added to the cavalry's targets.
+  - **Waterloo:** enemy cavalry and artillery within `DISTCAV1AUTOMELEE` (100 yards) are added to the cavalry's targets.
   - **Gettysburg:** with `CanCharge` = 0, cavalry charges non-artillery enemies within that distance.
 - **Screens and guards:** cavalry on a flank screen or guarding a battery follows its assignment from the playbook.
 - **Gettysburg:** dismounted cavalry remounts after a while. See [section 9](#9-waterloo-and-gettysburg-differences).
