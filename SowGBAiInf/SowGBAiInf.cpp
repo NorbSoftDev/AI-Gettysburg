@@ -5,8 +5,6 @@
 #include "../sowmod/xunitdef.h"
 #include "../sowmod/xtables.h"
 
-#include "xtables.inl"
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -27,11 +25,8 @@ SSowModFuncs &gMod = theApp.m_sow;
 int SowInit( void *funcs )
 {
 	SSowModFuncs *sow = (SSowModFuncs *)funcs;
-	
-	sow->gTableDivStrat   = gDivStrat;
-	sow->gTableTacOrders  = TableTacOrders;
-	sow->gTableBrigStance = TableStance;
 
+	// the ai tables (sow->gTable*) are loaded by the engine from Logistics\orders.csv, stance.csv, playbook.csv
 	theApp.m_sow = *sow;
 
 	return 1;

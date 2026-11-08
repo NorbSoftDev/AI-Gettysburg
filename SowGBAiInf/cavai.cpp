@@ -15,7 +15,7 @@
 
 #define AI_GUARDYDS 50
 #define GREATERTHREAT 2000
-#define CAV_RECALCTICKS (TICSPERSEC/6)
+#define CAV_RECALCTICKS 10 // counts AI passes, not ticks
 #define DISTARTYHOLD 200
 #define DIST2AMMOLOAD     160  // 40 yards squared
 #define DISTCAV1AUTOMELEE 100

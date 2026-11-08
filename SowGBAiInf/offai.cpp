@@ -29,8 +29,8 @@ static char THIS_FILE[] = __FILE__;
 #define DIST2COURARRIVE (15 * 15)
 #define DISTCOURKILL 50
 
-#define TICKS_WHEEL (15 * TICSPERMIN)
-#define COUR_RECALCTICKS (TICSPERSEC/6)
+#define TICKS_WHEEL (TICSPERMIN * 5 / 2) // 2.5 game minutes between brigade wheels
+#define COUR_RECALCTICKS 10 // counts AI passes, not ticks
 
 #define RETREATPERCENTAGE 21
 #define PLAYTRIGGERDISTANCE 500
@@ -768,7 +768,7 @@ bool CUnitDivThink( int , CXOff base )
 	int troub = 0;
 	int count = 0;
 
-	bool  bCour   = base.CourTime() == 0 || base.CourTime() + 15 * TICSPERMIN < CXUtil::GetTime();
+	bool  bCour   = base.CourTime() == 0 || base.CourTime() + TICSPERMIN * 5 / 2 < CXUtil::GetTime(); // orders by courier at most every 2.5 game minutes
 	bool  bDone   = true;
 	bool  bMoving = true;
 
@@ -881,7 +881,7 @@ bool CUnitDivThink( int , CXOff base )
 
 
 	// reduced this to just 1 brig in trouble
-	if ( base.Leader() && troub > 0 && ( base.HelpTime() == 0 || base.HelpTime() + 30 * TICSPERMIN < CXUtil::GetTime() ) )  //if there is units in trouble, the division is attached and i had help time
+	if ( base.Leader() && troub > 0 && ( base.HelpTime() == 0 || base.HelpTime() + 5 * TICSPERMIN < CXUtil::GetTime() ) )  //if there is units in trouble, the division is attached and i had help time
 	{
 		base.HelpTime(true,CXUtil::GetTime());  // I set the help time
 

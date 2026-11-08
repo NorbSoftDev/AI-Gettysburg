@@ -1,0 +1,13 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# Old per-project build folders
+Debug/
+Release/
+release - optimize/
+x64/

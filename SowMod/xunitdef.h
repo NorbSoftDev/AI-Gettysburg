@@ -6,13 +6,13 @@
 
 #pragma once
 
-#define TICSPERSEC 60
+#define TICSPERSEC 360 // engine ticks per second, as counted by CXUtil::GetTime(); was 60, which made timers built from it run 6x faster than written
 #define TICSPERMIN (TICSPERSEC * 60)
 
 #define UTYPE_MelOrRet 0x00000001
 // max val             0xffffffff
 
-#define MAX_TICKSOFFSDK 10 // ten ints for the ai use, meant for ticks, saved with each officer
+#define MAX_TICKSOFFSDK 30 // ints for the ai use, meant for ticks, saved with each officer (was 10 before engine 1.020)
 
 #define MORAL_ROUTED    0
 #define MORAL_BROKEN    1
@@ -480,6 +480,9 @@ enum ECommands
 //-----------------------------
 
 	eComBench,
+
+	eComCaptureKey,  // Options Keyboard tab: next key pressed goes to the selected action
+	eComResetKeys,   // Options Keyboard tab: back to Work\defaultkeys.csv
 
 	eComMax,
 };
