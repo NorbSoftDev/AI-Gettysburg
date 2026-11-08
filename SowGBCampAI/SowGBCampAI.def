@@ -1,0 +1,6 @@
+; SowGBCampAi.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SowGBCampAi"
+
+EXPORTS
+    ; Explicit exports can go here

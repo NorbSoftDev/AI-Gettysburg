@@ -1,0 +1,6 @@
+; SowGBAiInf.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SowGBAiInf"
+
+EXPORTS
+    ; Explicit exports can go here
